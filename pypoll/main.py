@@ -1,41 +1,31 @@
 import os
 import csv
 
-ballot_list = []
 candidate_list = []
 
 resource = os.path.join("pypoll",'Resources', 'election_data.csv')
-
 with open(resource) as poll_data:
-    
     poll_reader = csv.reader(poll_data, delimiter=',')    
     header = next(poll_data)
-    # print (f"Header : {header}")
-
     for row in poll_reader:
         candidate = str(row[2])
         candidate_list.append(candidate)
 
 # use set to create a list of unique candidates    
 candidate_set = set(candidate_list)
-# print ((candidate_set))
 
 # the len (count) of the candidate_list is the total number of votes cast
-# (no need for a seperate count of ballots)
 total_votes = (len(candidate_list))
 
 # count the votes per candidate as per candidate_set
 raymon_count = 0
 diana_count = 0
 charles_count = 0
-
 for x in candidate_list:
     if x == "Raymon Anthony Doane":
         raymon_count = raymon_count+1
-
     elif x == "Diana DeGette":
         diana_count = diana_count+1
-
     elif x == "Charles Casper Stockham":
         charles_count = charles_count+1
 
