@@ -60,7 +60,7 @@ print("")
 print(f"Winner: {first}")
 
 # create an utput text file in the analysis folder
-answers_output = os.path.join('..','pypoll', 'Analysis', 'outputfile.txt')
+answers_output = os.path.join('Analysis', 'outputfile.txt')
 with open (answers_output, "w") as output:
     output.write ("Election Results\n")
     output.write("\n")
