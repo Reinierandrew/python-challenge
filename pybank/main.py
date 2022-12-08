@@ -1,7 +1,7 @@
 import os
 import csv
 
-resource = os.path.join("pybank",'Resources', 'budget_data.csv')
+resource = os.path.join('pybank','Resources', 'budget_data.csv')
 
 months = 0
 # create space to store profits and months
@@ -60,16 +60,13 @@ low_month = month[low_index+1]
 low_index = changes.index(lowest)
 
 
-# # print(sum(Decimal(x[col]) for x in reader if x[col]))
-# print ("Financial Analysis")
-# print ("-------------------------------------")
-# print (f"Total months:  {len(month)}")
-# print ("Total:  $ " + "%.0f" % (totalprofits))
-# print(f"Average change:  $ {round(average_change, 2)}")
-# print (highest)
-# print (lowest)
-# print (high_month)
-# print (low_month)
+print ("Financial Analysis")
+print ("-------------------------------------")
+print (f"Total months:  {len(month)} \n")
+print (f"Total:  $ {round(totalprofits, 2)}\n")
+print (f"Average change:  $ {round(average_change,2)}\n")
+print (f"Greatest increase in profits:  {high_month} (${highest})\n")
+print (f"Greatest decrease in profits:  {low_month} (${lowest})\n")
 
 # create an utput text file in the analysis folder
 answers_output = os.path.join("pybank", "Analysis", 'outputfile.txt')

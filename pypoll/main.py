@@ -3,7 +3,7 @@ import csv
 
 candidate_list = []
 
-resource = os.path.join("pypoll",'Resources', 'election_data.csv')
+resource = os.path.join('pypoll','Resources', 'election_data.csv')
 with open(resource) as poll_data:
     poll_reader = csv.reader(poll_data, delimiter=',')    
     header = next(poll_data)
@@ -44,18 +44,18 @@ else: first = "Charles Casper Stockham"
 
 
 #  print to screen
-# print ("Election Results")
-# print("")
-# print ("------------------------------------------")
-# print (f"Total votes: {total_votes}")
-# print("")
-# print (f"Charles Casper Stockham  {charles_perc} ({charles_count})")
-# print("")
-# print (f"Diana DeGette   {diana_perc} ({diana_count})")
-# print("")
-# print (f"Raymon Anthony Doane {raymon_perc} ({raymon_count}) ")
-# print("")
-# print(f"Winner: {first}")
+print ("Election Results")
+print("")
+print ("------------------------------------------")
+print (f"Total votes: {total_votes}")
+print("")
+print (f"Charles Casper Stockham  {charles_perc} ({charles_count})")
+print("")
+print (f"Diana DeGette   {diana_perc} ({diana_count})")
+print("")
+print (f"Raymon Anthony Doane {raymon_perc} ({raymon_count}) ")
+print("")
+print(f"Winner: {first}")
 
 # create an utput text file in the analysis folder
 answers_output = os.path.join("pypoll", "Analysis", 'outputfile.txt')
