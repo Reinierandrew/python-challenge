@@ -1,7 +1,8 @@
 import os
 import csv
 
-resource = os.path.join('pybank','Resources', 'budget_data.csv')
+os.chdir(os.path.dirname(__file__))
+resource = os.path.join('Resources', 'budget_data.csv')
 
 months = 0
 # create space to store profits and months
@@ -69,7 +70,7 @@ print (f"Greatest increase in profits:  {high_month} (${highest})\n")
 print (f"Greatest decrease in profits:  {low_month} (${lowest})\n")
 
 # create an utput text file in the analysis folder
-answers_output = os.path.join("pybank", "Analysis", 'outputfile.txt')
+answers_output = os.path.join('..','pybank', 'Analysis', 'outputfile.txt')
 with open (answers_output, "w") as output:
     output.write ("Financial Analysis\n")
     output.write ("\n")

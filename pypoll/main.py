@@ -1,9 +1,13 @@
 import os
 import csv
 
-candidate_list = []
+os.chdir(os.path.dirname(__file__))
+resource = os.path.join('Resources', 'election_data.csv')
 
-resource = os.path.join('pypoll','Resources', 'election_data.csv')
+# use set to create a list of unique candidates    
+candidate_list = []
+candidate_set = set(candidate_list)
+
 with open(resource) as poll_data:
     poll_reader = csv.reader(poll_data, delimiter=',')    
     header = next(poll_data)
@@ -11,8 +15,6 @@ with open(resource) as poll_data:
         candidate = str(row[2])
         candidate_list.append(candidate)
 
-# use set to create a list of unique candidates    
-candidate_set = set(candidate_list)
 
 # the len (count) of the candidate_list is the total number of votes cast
 total_votes = (len(candidate_list))
@@ -58,7 +60,7 @@ print("")
 print(f"Winner: {first}")
 
 # create an utput text file in the analysis folder
-answers_output = os.path.join("pypoll", "Analysis", 'outputfile.txt')
+answers_output = os.path.join('..','pypoll', 'Analysis', 'outputfile.txt')
 with open (answers_output, "w") as output:
     output.write ("Election Results\n")
     output.write("\n")
